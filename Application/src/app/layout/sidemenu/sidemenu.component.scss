@@ -1,0 +1,55 @@
+$width: 100%;
+
+.sidemenu {
+  background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+  color:#ff9a9e;
+  width: $width;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  gap: 5rem;
+  position: sticky;
+  top: 0;
+  transition: width 350ms ease-out;
+  z-index: 3;
+
+    &-head {
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        padding-top: 2rem;
+        text-align: center;
+
+        &:hover {
+            color: rgb(175, 66, 84);
+          }
+      
+      }
+    &-parametre{
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        padding-top: 2rem;
+        text-align: center;
+
+        &:hover {
+            color: rgb(184, 46, 69);
+          }
+}
+  }
+
+@media all and (max-width: calc(2*$width)) {
+  .sidemenu {
+    width: 0;
+    position: fixed;
+
+    &-close {
+      display: block;
+    }
+
+    &-head {
+      display: none;
+    }
+  }
+}

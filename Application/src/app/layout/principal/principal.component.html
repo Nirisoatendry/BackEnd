@@ -1,0 +1,26 @@
+<table class="table table-light" mat-table [dataSource]="dataSource">
+    <ng-container  matColumnDef="Lastname">
+      <th class="text-dark"mat-header-cell  *matHeaderCellDef> Lastname </th>
+      <td class="text-dark" mat-cell *matCellDef="let user"> {{user.Lastname}} </td>
+    </ng-container>
+    <ng-container  matColumnDef="Firstname">
+      <th class="text-dark" mat-header-cell *matHeaderCellDef> Firstname </th>
+      <td class="text-dark" mat-cell *matCellDef="let user"> {{user.Firstname}} </td>
+    </ng-container>
+    <ng-container  matColumnDef="email">
+      <th class="text-dark" mat-header-cell *matHeaderCellDef> Email </th>
+      <td class="text-dark" mat-cell *matCellDef="let user"> {{user.email}} </td>
+    </ng-container>
+    <ng-container  matColumnDef="group">
+      <th class="text-dark" mat-header-cell *matHeaderCellDef> Group</th>
+      <td class="text-dark" mat-cell *matCellDef="let user"> {{user.group}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]= "[9,10,20]"  showFirstLastButtons  aria-label = "Sélectionner la page des éléments périodiques" > 
+</mat-paginator > 
+
+<button type="button" class="btn btn-secondary " routerLink="signUp">New User</button>
