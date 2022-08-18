@@ -21,7 +21,7 @@ export class FormulaireComponent implements OnInit {
 
   constructor(private register : AuthService) { }
   signUpUser() {
-    this.register.sendData('/register',this.signUpForm.value).subscribe((data)=>{
+    this.register['sendData']('/register',this.signUpForm.value).subscribe((data: any)=>{
       
       console.log(data);
     })

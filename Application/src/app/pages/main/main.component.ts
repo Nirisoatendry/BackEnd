@@ -20,7 +20,7 @@ export class MainComponent {
   constructor(private Auth : AuthService,private route : Router) { }
   
   loginUser() {
-    this.Auth.sendData('/login',this.loginForm.value).subscribe((data)=>{
+    this.Auth['sendData']('/login',this.loginForm.value).subscribe((data: { success: any; })=>{
       if(data.success){
         this.route.navigateByUrl("Affiche");
       }else{
@@ -28,6 +28,7 @@ export class MainComponent {
       }
       // console.log(data)
     }); 
+    
   }
   ngOnInit(): void {
   }
