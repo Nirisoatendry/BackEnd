@@ -26,7 +26,5 @@ export class PrincipalComponent implements OnInit,AfterViewInit{
     this.columnsToDisplay = ['Lastname', 'Firstname' , 'email','group'];
     this.Utilisateur = User ;
     this.dataSource = new MatTableDataSource<user>(this.Utilisateur);
-    
   }
-
 }

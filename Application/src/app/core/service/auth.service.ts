@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 
 export class AuthService {
   [x: string]: any;
-  url = "http://localhost:8080";
+  url = "http://localhost:8081";
   constructor(private http:HttpClient) { } //injecter HttpClient
   
   sendData (api:string,data:any):Observable<any>{
@@ -16,5 +16,7 @@ export class AuthService {
   // sendData(api:string,data:any) :Observable<any>{
   //   return this.http.post(this.url+api,JSON.stringify(data));
   // }
+
+  
 }
 

@@ -13,7 +13,7 @@ export class MainComponent {
   public valide = false;
 
     loginForm = new FormGroup({
-      username: new FormControl(''),
+      email: new FormControl(''),
       password: new FormControl(''),
   })
 
@@ -26,9 +26,8 @@ export class MainComponent {
       }else{
         this.valide = true;
       }
-      // console.log(data)
+      console.log(data)
     }); 
-    
   }
   ngOnInit(): void {
   }
