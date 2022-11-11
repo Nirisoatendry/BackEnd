@@ -10,13 +10,10 @@ export class AuthService {
   url = "http://localhost:8081";
   constructor(private http:HttpClient) { } //injecter HttpClient
   
+  //Fonction pour envoyer les donnees au serveur 
   sendData (api:string,data:any):Observable<any>{
-    return this.http.post(this.url+api,JSON.stringify(data)) 
+    return this.http.post(this.url+api,JSON.stringify(data)); 
   }
-  // sendData(api:string,data:any) :Observable<any>{
-  //   return this.http.post(this.url+api,JSON.stringify(data));
-  // }
-
   
 }
 

@@ -10,16 +10,20 @@
                       <span>Email</span>
                       <input type="email" formControlName="email">
                   </div>
+
                   <div class="inputBx">
                       <span>Password</span>
                       <input type="password" formControlName="password">
                   </div>
+
                   <div class="inputBx">
                       <input type="submit" value="Sign in" name="">
                   </div>
+
                   <div *ngIf="valide">
                     <h6>Account not found <a routerLink="signUp">Do you want to create an account</a></h6>
                   </div>
+                  
                   <div class="inputBx">
                       <p>Don't have an account? <a routerLink="signUp">Sign Up</a></p>
                   </div>

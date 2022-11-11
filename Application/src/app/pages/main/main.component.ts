@@ -2,6 +2,8 @@ import { Component, NgModule, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormControlName } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/service/auth.service';
+import { Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-main',
@@ -16,8 +18,9 @@ export class MainComponent {
       email: new FormControl(''),
       password: new FormControl(''),
   })
+  // loginForm = this.fb.group
 
-  constructor(private Auth : AuthService,private route : Router) { }
+  constructor(private Auth : AuthService,private route : Router,private fb: FormBuilder) { }
   
   loginUser() {
     this.Auth['sendData']('/login',this.loginForm.value).subscribe((data: { success: any; })=>{
@@ -29,6 +32,8 @@ export class MainComponent {
       console.log(data)
     }); 
   }
+  
+  
   ngOnInit(): void {
   }
 }

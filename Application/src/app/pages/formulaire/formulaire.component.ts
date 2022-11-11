@@ -5,6 +5,7 @@ import {FormGroup,FormControl,FormControlName}  from'@angular/forms';
 import { AuthService } from 'src/app/core/service/auth.service';
 import { AfficheComponent } from 'src/app/layout/affiche/affiche.component';
 
+
 @Component({
   selector: 'app-formulaire',
   templateUrl: './formulaire.component.html',
@@ -25,9 +26,11 @@ export class FormulaireComponent implements OnInit {
   signUpUser() {
     this.register['sendData']('/register',this.signUpForm.value).subscribe((data: any)=>{
       if(data.success){
-        this.route.navigateByUrl("Affiche");
+        this.route.navigateByUrl("signUp");
       }
-      
+      else{
+
+      }
     })
    
   }
